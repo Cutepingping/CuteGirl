@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exam</title>
+    <style type="text/css">
+        div{width: 1100px;height: 680px;}
+        input{padding: 0 15px}
+        table{width: 820px;height:680px;text-align: left;text-indent:7em}
+        .button{width: 120px;height: 45px;font-size: 20px;}
+        .tr_radio{height: 100px;font-size: 18px;}
+        .td_tg{color: #000099;font-family: 黑体;}
+        .h2{font-family: 微软雅黑;}
+        .hr_padding{background-color:grey }
+    </style>
+    <script type="text/javascript">
+        function score(){
+            //评判成绩，5题100分，每题20分
+            var sum=0;
+            var sel_radio=new Array(4);
+            var right_answer=new Array(5);
+            right_answer[0]="A";
+            right_answer[1]="C";
+            right_answer[2]="C";
+            right_answer[3]="C";
+            right_answer[4]="A";
+            for(j=1;j<=5;j++){
+                switch (j)
+                {
+                    case 1:{obj=document.forms[0].r1;}break;
+                    case 2:{obj=document.forms[1].r2;}break;
+                    case 3:{obj=document.forms[2].r3;}break;
+                    case 4:{obj=document.forms[3].r4;}break;
+                    default:{obj=document.forms[4].r5;}break;
+                }
+                for(i=0;i<=obj.length-1;i++){
+                    if(obj[i].checked){sel_radio[j-1]=obj[i].value;}
+                }
+            }//计算总分
+            for(i=0;i<=4;i++){
+                if(sel_radio[i]==right_answer[i]){sum=sum+20;}
+            }
+            alert("您选择的答案是：\n"+sel_radio.join("-")+"\n"+"您的最终分数是："+sum);
+        }
+    </script>
+</head>
+<body>
+<div>
+  <h2 align="center">Web前端开发技术标准测验样例[单选题]</h2>
+    <hr size="26px" align="center" class="hr_padding">
+     <br>
+    <table>
+     <tr>
+     <td>
+        <form>
+        <table class="tr_radio">
+         <tr>
+             <td class="td_tg">1.HTML指的是（     ）.</td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r1" value="A">A.超文本标记语言（Hyper Text Markup Language） </td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r1" value="B">B.家庭工具标记语言（Home Tool Markup Language） </td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r1" value="C">C.超链接和文本标记语言（HyperLinks and Market Language） </td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r1" value="D">D.以上都不是 </td>
+         </tr>
+        </table>
+        </form>
+      </td>
+     </tr>
+     <tr>
+      <td>
+     <br>
+          <form>
+     <table class="tr_radio">
+         <tr>
+             <td class="td_tg">2.CSS文件的扩展名为（     ）</td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r2" value="A">A..txt </td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r2" value="B">B..htm </td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r2" value="C">C..css </td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r2" value="D">D..html </td>
+         </tr>
+     </table>
+         </form>
+     </td>
+      </tr>
+      <tr>
+      <td>
+     <br>
+          <form>
+     <table class="tr_radio">
+         <tr>
+             <td class="td_tg">3.在网页中最常用的单位是 （        ）</td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r3" value="A">A.in</td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r3" value="B">B.cm </td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r3" value="C">C.px </td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r3" value="D">D.pc </td>
+         </tr>
+     </table>
+          </form>
+      </td>
+      </tr>
+      <tr>
+      <td>
+     <br>
+          <form>
+     <table class="tr_radio">
+         <tr>
+             <td class="td_tg">4.设置text-decoration属性的删除线的值为（        ）</td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r4" value="A">A.underline</td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r4" value="B">B.overline </td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r4" value="C">C.line-through </td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r4" value="D">D.blink </td>
+         </tr>
+     </table>
+          </form>
+      </td>
+      </tr>
+       <tr>
+        <td>
+     <br>
+         <form>
+     <table class="tr_radio">
+         <tr>
+             <td class="td_tg">5.设置字符间距为15px的语句为 （        ）</td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r5" value="A">A.letter-spaceing:15px</td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r5" value="B">B.line-height:15px </td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r5" value="C">C.letter-height:15px </td>
+         </tr>
+         <tr>
+             <td><input type="radio" name="r5" value="D">D.line-spacing:15px </td>
+         </tr>
+     </table>
+         </form>
+    </td>
+     </tr>
+        <tr><td align="right">
+          <br><br>
+          <input type="button"  value="提交" onclick="score();" class="button">
+        </td>
+        </tr>
+        </table>
+
+</div>
+</body>
+</html>

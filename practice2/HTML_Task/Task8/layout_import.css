@@ -1,0 +1,7 @@
+a:hover {
+    text-decoration:none;
+    padding: 10px 25px;
+    background:lightgray;
+    border: 4px groove #F8F8F8;
+    color:#333
+}
