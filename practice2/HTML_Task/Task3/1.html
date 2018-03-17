@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器演示</title>
+    <style type="text/css">
+        a:link{color:gray;text-decration:none;}
+        a:visited{color:blue;text-decration:none;}
+        a.hover{color:red;text-decration: none;}
+        a:active{color:yellow;text-decration:none;}
+        p:first-letter{font-weight:bold;font-family:"黑体";}
+        p:first-line{font-size:20px;}
+    </style>
+</head>
+<body>
+<p>在支持CSS的浏览区中，连接的不同状态都可以不同的方式显示，这些状态包括：活动状态，一杯访问状态，违背访问状态和鼠标悬停状态。<br>
+    注意：a:hover必须被治愈a:link和a:visited只够用，才有效的被置于a:hover之后，才是有效的。a:active必须被置于a:hover之后，才是有效的。
+</p>
+<a href="http://www.baidu.com">搜索一下：百度</a>
+</body>
+</html>

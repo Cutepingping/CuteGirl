@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器布局</title>
+    <style type="text/css">
+        #wrap{
+            width: 410px;
+            height: 420px;
+            background-color: rgb(230,230,230);
+            z-index: 0;
+        }
+        #result{
+            height:60px;
+            width: 390px;
+            border: solid 1px;
+            z-index: 1;
+            position: absolute;
+            top: 50px;
+            left: 15px;
+            background-color: white;
+        }
+        #op{
+            height: 300px;
+            width: 390px;
+            border:solid 1px;
+            z-index: 1;
+            position: absolute;
+            top: 115px;
+            left: 15px;
+        }
+        .d_num{
+            border: solid 1px black;
+            width:58px;
+            height: 40px;
+            margin: 10px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="result"></div>
+    <div id="op">
+        <table cellspacing="30">
+            <tr align="center">
+                <td class="d_num">1</td>
+                <td class="d_num">2</td>
+                <td class="d_num">3</td>
+                <td class="d_num">+</td>
+            </tr>
+            <tr align="center">
+                <td class="d_num">4</td>
+                <td class="d_num">5</td>
+                <td class="d_num">6</td>
+                <td class="d_num">-</td>
+            </tr>
+            <tr align="center">
+                <td class="d_num">7</td>
+                <td class="d_num">8</td>
+                <td class="d_num">9</td>
+                <td class="d_num">*</td>
+            </tr>
+            <tr align="center">
+                <td class="d_num">0</td>
+                <td class="d_num">=</td>
+                <td class="d_num">CE</td>
+                <td class="d_num">/</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

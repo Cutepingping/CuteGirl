@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div层叠</title>
+    <style type="text/css">
+        body{
+            margin: 0;;
+        }
+        div{
+            position: absolute;
+            width: 200px;
+            height:200px;
+        }
+        #d1{
+            background-color: black;
+            z-index: 0;
+            color: white;
+        }
+        #d2{
+            background-color: red;
+            top:50px;
+            left:50px;
+            z-index: 1;
+        }
+        #d3{
+            background-color: yellow;
+            top: 100px;
+            left: 100px;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+<div id="d1">div1</div>
+<div id="d2">div2</div>
+<div id="d3">div3</div>
+</body>
+</html>
