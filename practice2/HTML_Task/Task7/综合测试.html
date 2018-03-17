@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线考试案例</title>
+    <script language="JavaScript">
+        var Total_Question=8;//考题的数量
+        var msg=" ";
+        //正确答案-保存在数组中
+        var Answer=new Array(Total_Question);
+        Answer[0]="TCP/IP";
+        Answer[1]="网关";
+        Answer[2]="Microsoft";
+        Answer[3]="网络信息服务";
+        Answer[4]="可以再两个方向上同时传输";
+        Answer[5]="1.54Mbps";
+        Answer[6]="环形拓扑";
+        Answer[7]="3位";
+        function GetSelectedButton(list){//获取用户的选择
+            for(var x=0;x<list.length;x++)
+                if(list[x].checked)
+                    return x;
+            return 0;
+        }
+        function ReportScore(correct){//显示最终的考试结果
+            var SecWin=window.open("","scorewin","scrollbars,width=300,height=220");
+            var MustHavel="<HTML><HEAD><TITLE>检测成绩报告</TITLE></HEAD><BODY>";
+            var Percent="<H2>检测成绩："+Math.round(correct/Total_Question*100)+"</H2><HR>";
+            lastscore=Math.round(correct/Total_Question*100);
+            if(lastscore=="100"){
+                msg=MustHavel+Percent+"<font color='red'>恭喜，全答对了！</font><BODY>"+msg+"<input type='button' value='close'" +
+                        " onclick=window.close()></BODY></HTML>";
+            }
+            else{
+                msg=MustHavel+Percent+"<font color='red'>正确答案：</font><BODY>"+msg+"<input type='button' value='close'" +
+                        " onclick=window.close()></BODY></HTML>";
+            }
+            SecWin.document.write(msg);//输出提示信息
+            msg="";//清空信息提示
+        }
+        function Score(){
+            var correct=0;
+            var wrong=0;
+            for(number=0;number<Total_Question;number++){
+                var form=document.forms[number];//新欢获取没一个问题
+                var i=GetSelectedButton(form.q1);//获取问题中的选择项
+                if(form.ql[i].value=="1"){
+                    correct++;
+                }
+                else{
+                    wrong++;
+                    msg+="Question"+(number+1)+"."+Answer[number]+"<BR>";
+                }
+            }
+            ReportScore(correct);//输出最终结果
+        }
+    </script>
+</head>
+<body>
+<table width="85%" border="0" align="center">
+    <tr>
+        <td>
+            <form>
+                <center><font color="#212FDE">计算机网络在线考试</font></center><p>
+                <center><font color="#212FDE">总分100分（60分以上过关）</font></center><hr><br>
+                (1)Internet上使用的网络协议为：_________
+                <br>
+                <input type="radio" name="q1" value="0" checked>FTP
+                <input type="radio" name="q1" value="1">TCP/IP
+                <input type="radio" name="q1" value="0">THHP
+                <br><br>
+            </form>
+             <form>
+                (2)GateWay是指：________
+                <br><br>
+                <input type="radio" name="q1" value="0" checked>网桥
+                <input type="radio" name="q1" value="0">集线器
+                <input type="radio" name="q1" value="1">网关
+                <input type="radio" name="q1" value="0">路由器
+                <br><br><br>
+             </form>
+             <form>
+                 (3)ASP.NET是哪个公司的产品：________
+                <br><br>
+                <input type="radio" name="q1" value="o" checked>IBM
+                <input type="radio" name="q1" value="1">Microsoft
+                <input type="radio" name="q1" value="0">SUN
+                <br><br><br>
+            </form>
+             <form>
+                 (4)IIS(Internet Information Sever)的中文是：________
+                 <br><br>
+                 <input type="radio" name="q1" value="0" checked>在线网站管理
+                 <input type="radio" name="q1" value="1">网络信息服务
+                 <input type="radio" name="q1" value="0">网络虚拟路由器
+                 <br><br><br>
+             </form>
+              <form>
+                  (5)采用全双工通信方式，数据传输的方向性结构为：_________
+                  <br><br>
+                  <input type="radio" name="q1" value="1" checked>可以再两个方向同时传输
+                  <input type="radio" name="q1" value="0">只能在一个方向上传输
+                  <input type="radio" name="q1" value="0">可以再两个方向上传输，但不能同时进行
+                  <br><br><br>
+              </form>
+               <form>
+                   (6)T1载波的数据传输率为：________
+                   <br><br>
+                   <input type="radio"name="q1" value="o"checked>1Mbps
+                   <input type="radio" name="q1" value="0">2.048Mbps
+                   <input type="radio" name="q1" value="1">1.544Mbps
+                   <br><br><br>
+               </form>
+                <form>
+                    (7)若网络形状是由站点和连接站点的链路组成的一个比合欢，则称这种拓扑结构为：________
+                    <br><br>
+                    <input type="radio" name="q1" value="0" checked>星形拓扑
+                    <input type="radio" name="q1" value="0">总线拓扑
+                    <input type="radio" name="q1" value="1">环形拓扑
+                    <br><br><br>
+                </form>
+                <form>
+                    (8)采用海明码纠正以为差错，若信息为4位，则冗余位至少应为：_________
+                    <br><br>
+                    <input type="radio" name="q1" value="0" checked>2位
+                    <input type="radio" name="q1" value="1">3位
+                    <input type="radio" name="q1" value="0">4位
+                    <br><br><br>
+                </form>
+                <form>
+                    <div align="center">
+                        <input type="button" name="submit" value="看看成绩" onclick="Score()">
+                    </div>
+                 </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除、插入、替换节点案例</title>
+    <script type="text/javascript">
+        function operateNode(){
+            //将节点删除
+            var p=document.getElementsByTagName("p")[0];
+            document.form1.removeChild(p);
+            //将节点更换并重新设置文本节点内容
+            var h5=document.createElement("h5");
+            var otext=document.createTextNode("Web前端开发技术！");
+            h5.appendChild(otext);
+            var h2=document.getElementsByTagName("h2")[0];
+            document.forml.replaceChild(h5,h2);
+            //在hdb节点前插入一个节点
+            var op=document.createElement("p");
+            var otext=document.createTextNode("中国的是世界的！");
+            op.appendChild(otext);
+            var hdb=document.getElementsByName("hdb")[0];
+            document.forml.insertBefore(op,hdb);
+        }
+    </script>
+</head>
+<body>
+<form name="forml">
+    <h2>javescript程序设计</h2>
+    <p>hello world！</p>
+    <hdb>世界的也是中国的！</hdb><br>
+    <input type="button" value="单击修改节点" onclick="operateNode()">
+</form>
+</body>
+</html>

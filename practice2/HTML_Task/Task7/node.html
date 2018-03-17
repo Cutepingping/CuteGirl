@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建节点案例</title>
+    <script type="text/javascript">
+        function createP(){
+            var op=document.createElement("p");
+            var otext=document.createTextNode("Hello world!");
+            op.appendChild(otext);
+            document.forms[0].appendChild(op);
+        }
+    </script>
+</head>
+<body>
+<form name="form1">
+    <input type="button" value="单击创建节点" onclick="createP()">
+</form>
+</body>
+</html>

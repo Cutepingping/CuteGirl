@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>邮箱验证举例</title>
+    <script type="text/javascript">
+        function EmailTest(){
+            //获取用户输入的邮箱地址相关信息
+            var EmailString=document.forml.Email.value;
+            var EmailLength=EmailString.length;
+            var index1=EamilString.indexof("@");
+            var index2=EmailString.indexof("."+index1);
+            var msg="验证邮箱地址实例：\n\n";
+            msg+="邮箱地址："+EmailString+"\n";
+            msg+="验证信息：";
+            //返回相关验证信息
+            if(index1==-1||index2==-1||index2<=index1+1||index1==0||index2==EmailLength-1) {
+                msg+="邮箱地址不合法！\n\n";
+                msg+="不能同时满足如下条件：\n";
+                msg+="1、邮件地址中同时含有‘@’和‘.’字符;\n";
+                msg+="2、‘@’后必须有‘’，且中间至少间隔一个字符；\n";
+                msg+="3、‘@’不为第一个字符，‘.’部位最后一个字符.\n";
+            }else{
+                msg+="邮箱地址合法！\n\n";
+                msg+="能同时满足如下条件：\n";
+                msg+="1、邮件地址中同时含有‘@’和 '.'字符；\n";
+                msg+="2、‘@’后必须有‘’，且中间至少间隔一个字符；\n";
+                msg+="3、‘@’不为第一个字符，‘.’部位最后一个字符.\n";
+            }
+            alert(msg);
+        }
+    </script>
+</head>
+<body>
+<br>
+<center>
+    <form name="form1">
+        邮箱地址：<input type="text" name="Email" value="@">
+        <input type="button" value="验证邮箱地址" onclick="return EmailTest()">
+    </form>
+</center>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组对象应用案例</title>
+</head>
+<body>
+<h3>数组对象应用案例</h3>
+<script type="text/javascript">
+    var coursel=new Array("C++程序设计","HTML开发基础","数据库原理","计算机网络");
+    var course2=["C++程序设计","HTML开发基础","数据库原理","计算机网络"];
+    document.write("数组中的元素：<br>");//访问数组中的元素
+    for(var i=0;i<=course2.length-1;i++){
+        document.write(i+"-"+course2[i]+"&nbsp;&nbsp;");
+    }
+    document.write("<br><br>");
+    //join方法的使用
+    document.write(course2.join("-")+"<br>");
+    document.write(course2.join("+")+"<br>");
+    document.write(course2.join(" ")+"<br>");
+    //pop/push的使用
+    document.write("<br>删除数组最后元素是："+course2.pop());
+    var s=course2.push("大学物理","高等数学");
+    document.write("<br>课程数组2的长="+s);
+    var course1=new Array("C++程序设计","HTML开发基础","数据库原理","计算机网络");
+    //shift/unshift方法的使用
+    var ss=course1.shift();
+    document.write("<br>删除数组第一个元素是:"+ss);
+    //数组开始出插入新元素
+    var s=course1.unshift("大学语文");//在IE中显示undefined
+    document.write("<br>数组元素分别为："+course1+"<br>" +
+            "数组的长度="+s);
+    //在IE中用course1.length代替s
+</script>
+</body>
+</html>

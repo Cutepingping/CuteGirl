@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerText/inerTextHTML举例</title>
+    <script type="text/javascript">
+        function textGet(){
+            var oDiv=document.getElementById("oDiv");
+            var msg="通过 innerText属性获得：";
+            msg+=oDiv.innerText;
+            msg+="\n通过innerHTML属性获得：";
+            msg+=oDiv.innerHTML;
+            alert(msg);
+        }
+    </script>
+</head>
+<body onload="textGet()">
+<div id="oDiv">
+    <strong>web前端开发技术，不错！</strong>
+</div>
+</body>
+</html>

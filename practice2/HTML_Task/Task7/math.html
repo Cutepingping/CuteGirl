@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机整数发生器举例</title>
+    <script type="text/javascript">
+        function randomTest(){
+            var m=document.forml.minN.value;
+            var n=document.forml.maxN.value;
+            var msg="m到n之间的随机数字产生实例：\n\n";
+            msg+="随机数范围设定：";
+            msg+="下限：" +m;
+            msg+="  上限："+n;
+            if(m==n){
+                msg+="错误提示信息：\n";
+                msg+="上限与下限相等，请返回重新输入！";
+            }
+            else{
+                msg+="\n随机数字产生结果:\n"
+                for(var i=0;i<10;i++){
+                    //产生0-1之间随机数，并通过系数变换到m-n之间
+                    msg+="第"+(i+1)+"个："+Math.round((Math.random()*(n-m)+parseFloat(m)))+"\n";
+                }
+            }
+            alert(msg);
+        }
+    </script>
+</head>
+<body>
+<h3>随机整数发生器</h3>
+<form name="form1" action=" " onclick="return randomTest();" >
+    随机数产生范围上限：<input type="text" name="minN" size="20" value="1"><br>
+    随机数产生范围上限：<input type="text" name="maxN" size="20" value="10"><br><br>
+    <input type="button" value="数学运算" >
+
+</form>
+</body>
+</html>

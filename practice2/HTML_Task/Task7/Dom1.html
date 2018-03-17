@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DON文档数举例</title>.
+    <script type="text/javascript">
+        function validate(){
+            //此处用户登录时的教研处理代码
+            var msg="用户名";
+            var username=document.getElementById("username").value;
+            msg+=username;
+            msg+="\n密码为：";
+            var psw=document.getElementById("password").value;
+            msg+=psw;
+            msg+="\n邮箱地址为：";
+            var email=document.getElementById("email").value;
+            msg+=email;
+            alert(msg);
+        }
+    </script>
+</head>
+<body>
+<form method="post" action="" name="myform">
+    <table>
+        <tr>
+            <td>用户名</td>
+            <td><input type="text" name="username" id="username"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="password" name="password" id="password"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>邮箱</td>
+            <td><input type="text" name="email" id="email"> </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+            <input type="button" value="提交" onclick="validate();">
+            <input type="reset">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

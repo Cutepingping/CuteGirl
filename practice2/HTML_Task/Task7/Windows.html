@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对话框举例</title>
+    <script type="text/javascript">
+        function dialogTest(){
+            window.alert("欢迎访问本网页！");
+            var answer=confirm("1+1=2吗?");
+            if(answer==true){
+                alert("算术运算1+1=2成立！");
+            }else{
+                alert("算术运算1+1=2不成立！");
+            }
+            var answer1=prompt("算术运算题目：1+1=？","请输入值");
+            if(answer1==2){
+            alert("恭喜您，你的答案正确！");
+            }
+            else if(answer1==null){
+                alert("对不起，您还没有作答！");
+            }
+            else{
+                alert("对不起，您的答案错误！");
+            }
+        }
+    </script>
+</head>
+<body onload="dialogTest()">
+</body>
+</html>

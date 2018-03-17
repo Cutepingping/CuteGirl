@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>状态栏移动举例</title>
+    <script type="text/javascript">
+        var TimerID;
+        var dir=1;
+        var str_num=0;
+        //用于动态显示的目标字符串
+        var str="欢迎来到javascript世界！";
+        //设定动态显示的状态栏信息
+        function startStatus(){
+            var str_space="";
+            str_num+=dir;
+            if(str_num>30||str_num<0){
+                dir=-1*dir;
+            }
+            for(var i=0;i<str_num;i++){
+                str_space+=" ";
+            }
+            window.status=str_space+str;
+        }
+        function mystart(){
+            TimerID=setInterval("startStatus();",100);
+        }
+        function mystop(){
+            clearInterval(TimerID);
+            windows.status="状态栏移动结束。";
+        }
+    </script>
+</head>
+<body>
+<br>
+<center>
+    <p>单击对应的按钮，实现动态状态栏的滚动及停止！</p>
+    <form name="MyForm">
+        <input type="button" value="开始状态栏滚动" onclick="mystart()"><br>
+        <input type="button" value="停止状态栏滚动" onclick="mystop()"><br>
+    </form>
+</center>
+</body>
+</html>
