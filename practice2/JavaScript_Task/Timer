@@ -1,1 +1,19 @@
-
+<html>
+<body text=red>
+<h1><font color = blue>示范网页</font></h1>
+<script>
+  var x=0;
+  
+  function changeState(){
+    x = x + 1;
+    setTimeout("changeState()",1000);
+    let content = document.getElementById('content');
+    content.innerHTML = x;
+    console.log(x);
+    }
+</script>
+<button onclick = "changeState()">开始计时</button>
+<p>已运行时间</p>
+<p id="content"></p>
+</body>
+</html>
