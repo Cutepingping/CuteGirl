@@ -2,14 +2,25 @@
 <body text=red>
 <h1><font color = blue>示范网页</font></h1>
 <script>
-  var x=0;
+  var x=00;
+  var y=00;
+  var z=00;
   
   function changeState(){
-    x = x + 1;
-    setTimeout("changeState()",1000);
+    if(x<=59&&x>=0 && y<=59&&y>=0 && z<=59&&z>=0){
     let content = document.getElementById('content');
-    content.innerHTML = x;
+    content.innerHTML = z + ":"+y + ":" + x;
     console.log(x);
+    x = x + 1;
+    } else if(y<=59 && y>=0 && z<=59&&z>=0){
+    y = y + 1;
+    x = 0;
+    }else if (z<=59 && z>=0){
+    z= z + 1;
+    y = 0;
+    x = 0;
+    }
+    setTimeout("changeState()",1000);
     }
 </script>
 <button onclick = "changeState()">开始计时</button>
