@@ -1,2 +1,3 @@
-# CuteGirl
-musical-sniffle
+一些前端入门学习的小case
+希望能够通过不断地锻炼涨知识啦
+前端所学知识范而杂，希望能够在继续深入javascript，并实时关注前沿发展
